@@ -4,81 +4,80 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AutoServiceSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Client">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FullName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Gender" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Address" Type="nvarchar" MaxLength="150" Nullable="false" />
-          <Property Name="Email" Type="nvarchar" MaxLength="255" Nullable="false" />
-          <Property Name="NationalCardNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="PIN" Type="nchar" MaxLength="10" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Repair">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CreeatedDate" Type="date" Nullable="false" />
-          <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Price" Type="money" Nullable="false" />
-          <Property Name="VehicleId" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Vehicle">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="VIN" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="RegistrationPlate" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Make" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Model" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Color" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="ClientId" Type="int" Nullable="false" />
-        </EntityType>
-        <Association Name="FK_Repair_Repair">
-          <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="1" />
-          <End Role="Repair" Type="Self.Repair" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Vehicle">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Repair">
-              <PropertyRef Name="VehicleId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Vehicle_Vehicle">
-          <End Role="Client" Type="Self.Client" Multiplicity="1" />
-          <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Client">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Vehicle">
-              <PropertyRef Name="ClientId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="AutoServiceSystemModelStoreContainer">
-          <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Repair" EntityType="Self.Repair" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Vehicle" EntityType="Self.Vehicle" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Repair_Repair" Association="Self.FK_Repair_Repair">
-            <End Role="Vehicle" EntitySet="Vehicle" />
-            <End Role="Repair" EntitySet="Repair" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Vehicle_Vehicle" Association="Self.FK_Vehicle_Vehicle">
-            <End Role="Client" EntitySet="Client" />
-            <End Role="Vehicle" EntitySet="Vehicle" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+    <Schema Namespace="AutoServiceSystemModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="AutoServiceSystemModelStoreContainer">
+    <EntitySet Name="Clients" EntityType="AutoServiceSystemModel.Store.Clients" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Repairs" EntityType="AutoServiceSystemModel.Store.Repairs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Vehicles" EntityType="AutoServiceSystemModel.Store.Vehicles" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Vehicle_Vehicle" Association="AutoServiceSystemModel.Store.FK_Vehicle_Vehicle">
+      <End Role="Client" EntitySet="Clients" />
+      <End Role="Vehicle" EntitySet="Vehicles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Repair_Repair" Association="AutoServiceSystemModel.Store.FK_Repair_Repair">
+      <End Role="Vehicle" EntitySet="Vehicles" />
+      <End Role="Repair" EntitySet="Repairs" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Gender" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="Phone" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="150" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="NationalCardNumber" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="PIN" Type="nchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Repairs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CreeatedDate" Type="datetime" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Price" Type="decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="VehicleId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vehicles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VIN" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="RegistrationPlate" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Make" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Model" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Color" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ClientId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Vehicle_Vehicle">
+    <End Role="Client" Type="AutoServiceSystemModel.Store.Clients" Multiplicity="1" />
+    <End Role="Vehicle" Type="AutoServiceSystemModel.Store.Vehicles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Vehicle">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Repair_Repair">
+    <End Role="Vehicle" Type="AutoServiceSystemModel.Store.Vehicles" Multiplicity="1" />
+    <End Role="Repair" Type="AutoServiceSystemModel.Store.Repairs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicle">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Repair">
+        <PropertyRef Name="VehicleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AutoServiceSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -162,49 +161,48 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="AutoServiceSystemModelStoreContainer" CdmEntityContainer="AutoServiceSystemEntities">
-          <EntitySetMapping Name="Clients">
-            <EntityTypeMapping TypeName="AutoServiceSystemModel.Client">
-              <MappingFragment StoreEntitySet="Client">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="FullName" ColumnName="FullName" />
-                <ScalarProperty Name="Gender" ColumnName="Gender" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="NationalCardNumber" ColumnName="NationalCardNumber" />
-                <ScalarProperty Name="PIN" ColumnName="PIN" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Repairs">
-            <EntityTypeMapping TypeName="AutoServiceSystemModel.Repair">
-              <MappingFragment StoreEntitySet="Repair">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="CreeatedDate" ColumnName="CreeatedDate" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="VehicleId" ColumnName="VehicleId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Vehicles">
-            <EntityTypeMapping TypeName="AutoServiceSystemModel.Vehicle">
-              <MappingFragment StoreEntitySet="Vehicle">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="VIN" ColumnName="VIN" />
-                <ScalarProperty Name="RegistrationPlate" ColumnName="RegistrationPlate" />
-                <ScalarProperty Name="Make" ColumnName="Make" />
-                <ScalarProperty Name="Model" ColumnName="Model" />
-                <ScalarProperty Name="Color" ColumnName="Color" />
-                <ScalarProperty Name="ClientId" ColumnName="ClientId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-        </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AutoServiceSystemModelStoreContainer" CdmEntityContainer="AutoServiceSystemEntities">
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="IsTypeOf(AutoServiceSystemModel.Client)">
+        <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NationalCardNumber" ColumnName="NationalCardNumber" />
+          <ScalarProperty Name="PIN" ColumnName="PIN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Repairs">
+      <EntityTypeMapping TypeName="IsTypeOf(AutoServiceSystemModel.Repair)">
+        <MappingFragment StoreEntitySet="Repairs">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="CreeatedDate" ColumnName="CreeatedDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="VehicleId" ColumnName="VehicleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehicles">
+      <EntityTypeMapping TypeName="IsTypeOf(AutoServiceSystemModel.Vehicle)">
+        <MappingFragment StoreEntitySet="Vehicles">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="VIN" ColumnName="VIN" />
+          <ScalarProperty Name="RegistrationPlate" ColumnName="RegistrationPlate" />
+          <ScalarProperty Name="Make" ColumnName="Make" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
@@ -218,7 +216,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>

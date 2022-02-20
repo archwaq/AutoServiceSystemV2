@@ -95,6 +95,7 @@
       <LastGenOutput>AutoServiceSystemModel.Context.cs</LastGenOutput>
       <DependentUpon>AutoServiceSystemModel.edmx</DependentUpon>
     </Content>
+    <Content Include="AutoServiceSystemModel.edmx.sql" />
     <Content Include="AutoServiceSystemModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>AutoServiceSystemModel.edmx</DependentUpon>
