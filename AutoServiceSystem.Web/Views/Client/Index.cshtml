@@ -1,0 +1,43 @@
+﻿@model List<AutoServiceSystem.BusinessObject.Client>
+
+@{
+    ViewBag.Title = "All Clients";
+}
+
+<h1>All Clients</h1>
+
+<div>
+    <button onclick="location.href='/create';return false;" class="add-new">Create New Client</button>
+</div>
+
+<section>
+    <div>
+        <table>
+            <tr>
+                <th>FullName</th>
+                <th>Gender</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Email</th>
+                <th>NationalCardNumber</th>
+                <th>PIN</th>
+            </tr>
+            @foreach (var client in Model)
+            {
+                <tr>
+                    <td>@client.FullName</td>
+                    <td>@client.Gender</td>
+                    <td>@client.Phone</td>
+                    <td>@client.Address</td>
+                    <td>@client.Email</td>
+                    <td>@client.NationalCardNumber</td>
+                    <td>@client.PIN</td>
+                    <td>
+                        <button onclick="location.href='/edit/@client.Id';return false;" class="edit">Edit</button>
+                        <button onclick="location.href='/delete/@client.Id';return false;" class="delete">Delete</button>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</section>
