@@ -14,7 +14,7 @@ namespace AutoServiceSystem.Web.Controllers
         private ClientRepository clientRepository = new ClientRepository();
 
         [HttpGet]
-        [Route("")]
+        [Route("client")]
         public ActionResult Index()
         {
             var clients = clientRepository.ReadAll();
@@ -22,27 +22,27 @@ namespace AutoServiceSystem.Web.Controllers
         }
 
         [HttpGet]
-        [Route("create")]
+        [Route("client/create")]
         public ActionResult Create()
         {
             return View(new Client());
         }
 
         [HttpPost]
-        [Route("create")]
+        [Route("client/create")]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Client client)
         {
             if (this.ModelState.IsValid)
             {
                 clientRepository.Create(client);
-                return Redirect("/");
+                return Redirect("/client");
             }
             return View(client);
         }
 
         [HttpGet]
-        [Route("edit/{id}")]
+        [Route("client/edit/{id}")]
         public ActionResult Edit(int id)
         {
             var client = clientRepository.Read(id);
@@ -53,7 +53,7 @@ namespace AutoServiceSystem.Web.Controllers
         }
 
         [HttpPost]
-        [Route("edit/{id}")]
+        [Route("client/edit/{id}")]
         [ValidateAntiForgeryToken]
         public ActionResult EditConfirm(int id, Client clientModel)
         {
@@ -72,10 +72,34 @@ namespace AutoServiceSystem.Web.Controllers
                 client.PIN = clientModel.PIN;
 
                 clientRepository.Update(client);
-                return Redirect("/");
+                return Redirect("/client");
             }
 
             return View("Edit", clientModel);
+        }
+
+        [HttpGet]
+        [Route("client/delete/{id}")]
+        public ActionResult Delete(int id)
+        {
+            var client = clientRepository.Read(id);
+            if (client == null)
+                return HttpNotFound();
+
+            return View(client);
+        }
+
+        [HttpPost]
+        [Route("client/delete/{id}")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirm(int id)
+        {
+            var clientModel = clientRepository.Read(id);
+            if (clientModel == null)
+                return HttpNotFound();
+
+            clientRepository.Delete(clientModel);
+            return Redirect("/client");
         }
     }
 }

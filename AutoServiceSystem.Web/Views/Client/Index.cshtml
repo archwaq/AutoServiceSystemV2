@@ -7,7 +7,7 @@
 <h1>All Clients</h1>
 
 <div>
-    <button onclick="location.href='/create';return false;" class="add-new">Create New Client</button>
+    <button onclick="location.href='/client/create';return false;" class="add-new">Create New Client</button>
 </div>
 
 <section>
@@ -33,8 +33,8 @@
                     <td>@client.NationalCardNumber</td>
                     <td>@client.PIN</td>
                     <td>
-                        <button onclick="location.href='/edit/@client.Id';return false;" class="edit">Edit</button>
-                        <button onclick="location.href='/delete/@client.Id';return false;" class="delete">Delete</button>
+                        <button onclick="location.href='client/edit/@client.Id';return false;" class="edit">Edit</button>
+                        <button onclick="location.href='client/delete/@client.Id';return false;" class="delete">Delete</button>
                     </td>
                 </tr>
             }
