@@ -1,0 +1,47 @@
+﻿@model AutoServiceSystem.BusinessObject.Vehicle
+
+@{
+    ViewBag.Title = "Edit Vehicle";
+}
+
+<h1>Edit Vehicle</h1>
+
+<section>
+    <div>
+
+        @using (Html.BeginForm("Edit", "Vehicle", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationSummary()
+
+            <label for="vin">VIN</label>
+            <input type="text" id="vin" value="@Model.VIN" name="vin">
+            @Html.ValidationMessageFor(m => m.VIN)
+
+            <label for="registrationplate">RegistrationPlate</label>
+            <input type="text" id="registrationplate" value="@Model.RegistrationPlate" name="registrationplate">
+            @Html.ValidationMessageFor(m => m.RegistrationPlate)
+
+            <label for="make">Make</label>
+            <input type="text" id="make" value="@Model.Make" name="make">
+            @Html.ValidationMessageFor(m => m.Make)
+
+            <label for="model">Model</label>
+            <input type="text" id="model" value="@Model.Model" name="model">
+            @Html.ValidationMessageFor(m => m.Model)
+
+            <label for="color">Color</label>
+            <input type="text" id="color" value="@Model.Color" name="color">
+            @Html.ValidationMessageFor(m => m.Color)
+
+            <label for="clientid">ClientID</label>
+            <input type="text" id="clientid" value="@Model.ClientID" name="clientid">
+            @Html.ValidationMessageFor(m => m.ClientID)
+
+            <button type="submit" class="accept">Edit</button>
+            <button onclick="location.href='/vehicle';return false;" class="cancel">Cancel</button>
+        }
+
+    </div>
+</section>
