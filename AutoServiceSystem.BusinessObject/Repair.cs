@@ -9,7 +9,7 @@ namespace AutoServiceSystem.BusinessObject
     public class Repair
     {
         public int Id { get; set; }
-        public DateTime CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
         public string Description { get; set; }
         public decimal Price { get; set; }
         public int VehicleID { get; set; }
