@@ -1,0 +1,34 @@
+﻿@model AutoServiceSystem.BusinessObject.Repair
+@{
+    ViewBag.Title = "Edit Repair";
+}
+
+<h1>Edit Repair</h1>
+
+<section>
+    <div>
+
+        @using (Html.BeginForm("Edit", "Repair", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationSummary()
+
+            <label for="description">Description</label>
+            <input type="text" id="description" value="@Model.Description" name="description">
+            @Html.ValidationMessageFor(m => m.Description)
+
+            <label for="price">Price</label>
+            <input type="text" id="price" value="@Model.Price" name="price">
+            @Html.ValidationMessageFor(m => m.Price)
+
+            <label for="vehicleid">VehicleID</label>
+            <input type="text" id="vehicleid" value="@Model.VehicleID" name="vehicleid">
+            @Html.ValidationMessageFor(m => m.VehicleID)
+
+            <button type="submit" class="accept">Edit</button>
+            <button onclick="location.href='/';return false;" class="cancel">Cancel</button>
+        }
+
+    </div>
+</section>

@@ -128,6 +128,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ClientController.cs" />
+    <Compile Include="Controllers\RepairController.cs" />
     <Compile Include="Controllers\VehicleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -175,6 +176,10 @@
     <Content Include="Views\Vehicle\Create.cshtml" />
     <Content Include="Views\Vehicle\Edit.cshtml" />
     <Content Include="Views\Vehicle\Delete.cshtml" />
+    <Content Include="Views\Repair\Index.cshtml" />
+    <Content Include="Views\Repair\Create.cshtml" />
+    <Content Include="Views\Repair\Edit.cshtml" />
+    <Content Include="Views\Repair\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
