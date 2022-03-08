@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoServiceSystem.DatabaseE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoServiceSystem.Web", "AutoServiceSystem.Web\AutoServiceSystem.Web.csproj", "{BAE5B78E-77C0-48BA-9A66-3BF469E621EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoServiceSystem.DatabaseEntity.Tests", "AutoServiceSystem.DatabaseEntity.Tests\AutoServiceSystem.DatabaseEntity.Tests.csproj", "{DFDA9F5B-E1CA-494D-9750-077EDA96DAB8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{BAE5B78E-77C0-48BA-9A66-3BF469E621EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAE5B78E-77C0-48BA-9A66-3BF469E621EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BAE5B78E-77C0-48BA-9A66-3BF469E621EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFDA9F5B-E1CA-494D-9750-077EDA96DAB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFDA9F5B-E1CA-494D-9750-077EDA96DAB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFDA9F5B-E1CA-494D-9750-077EDA96DAB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFDA9F5B-E1CA-494D-9750-077EDA96DAB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
