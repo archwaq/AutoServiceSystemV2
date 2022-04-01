@@ -1,9 +1,5 @@
 ﻿using AutoServiceSystem.BusinessObject;
 using AutoServiceSystem.DataAccessLayer;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace AutoServiceSystem.Web.Controllers
@@ -67,7 +63,8 @@ namespace AutoServiceSystem.Web.Controllers
                 vehicle.Make = vehicleModel.Make;
                 vehicle.Model = vehicleModel.Model;
                 vehicle.Color = vehicleModel.Color;
-                vehicle.ClientID = vehicleModel.ClientID;
+                vehicle.Client = vehicleModel.Client;
+                //vehicle.ClientID = vehicleModel.ClientID;
 
                 vehicleRepository.Update(vehicle);
                 return Redirect("/vehicle");

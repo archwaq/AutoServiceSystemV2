@@ -19,7 +19,7 @@
                 <th>Make</th>
                 <th>Model</th>
                 <th>Color</th>
-                <th>ClientID</th>
+                <th>Client</th>
             </tr>
             @foreach (var vehicle in Model)
             {
@@ -29,7 +29,7 @@
                     <td>@vehicle.Make</td>
                     <td>@vehicle.Model</td>
                     <td>@vehicle.Color</td>
-                    <td>@vehicle.ClientID</td>
+                    <td>@vehicle.Client.Id</td>
                     <td>
                         <button onclick="location.href='vehicle/edit/@vehicle.Id';return false;" class="edit">Edit</button>
                         <button onclick="location.href='vehicle/delete/@vehicle.Id';return false;" class="delete">Delete</button>
