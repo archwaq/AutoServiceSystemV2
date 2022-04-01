@@ -17,7 +17,7 @@
                 <th>CreatedDate</th>
                 <th>Description</th>
                 <th>Price</th>
-                <th>VehicleID</th>
+                <th>Vehicle</th>
             </tr>
             @foreach (var repair in Model)
             {
@@ -25,7 +25,7 @@
                     <td>@repair.CreatedDate</td>
                     <td>@repair.Description</td>
                     <td>@repair.Price</td>
-                    <td>@repair.VehicleID</td>
+                    <td>@repair.Vehicle.Id</td>
                     <td>
                         <button onclick="location.href='/edit/@repair.Id';return false;" class="edit">Edit</button>
                         <button onclick="location.href='/delete/@repair.Id';return false;" class="delete">Delete</button>

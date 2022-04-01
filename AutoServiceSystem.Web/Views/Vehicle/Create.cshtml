@@ -38,10 +38,10 @@
                    value="@Model.Color">
             @Html.ValidationMessageFor(m => m.Color)
 
-            <label for="clientid">ClientID</label>
-            <input type="text" id="clientid" name="clientid"
-                   value="@Model.ClientID">
-            @Html.ValidationMessageFor(m => m.ClientID)
+            <label for="client">Client</label>
+            <input type="text" id="client" name="client"
+                   value="@Model.Client.Id">
+            @Html.ValidationMessageFor(m => m.Client.Id)
 
             <button type="submit" class="">Create</button>
             <button onclick="location.href='/vehicle';return false;" class="cancel">Cancel</button>

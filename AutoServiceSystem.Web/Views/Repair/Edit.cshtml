@@ -22,9 +22,9 @@
             <input type="text" id="price" value="@Model.Price" name="price">
             @Html.ValidationMessageFor(m => m.Price)
 
-            <label for="vehicleid">VehicleID</label>
-            <input type="text" id="vehicleid" value="@Model.VehicleID" name="vehicleid">
-            @Html.ValidationMessageFor(m => m.VehicleID)
+            <label for="vehicle">Vehicle</label>
+            <input type="text" id="vehicle" value="@Model.Vehicle.Id" disabled>
+            @Html.ValidationMessageFor(m => m.Vehicle.Id)
 
             <button type="submit" class="accept">Edit</button>
             <button onclick="location.href='/';return false;" class="cancel">Cancel</button>

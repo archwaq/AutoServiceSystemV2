@@ -1,9 +1,5 @@
 ﻿using AutoServiceSystem.BusinessObject;
 using AutoServiceSystem.DataAccessLayer;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace AutoServiceSystem.Web.Controllers
@@ -65,7 +61,7 @@ namespace AutoServiceSystem.Web.Controllers
             {
                 repair.Description = repairModel.Description;
                 repair.Price = repairModel.Price;
-                repair.VehicleID = repairModel.VehicleID;
+                repair.Vehicle.Id = repair.Vehicle.Id;
 
                 repairRepository.Update(repair);
                 return Redirect("/");

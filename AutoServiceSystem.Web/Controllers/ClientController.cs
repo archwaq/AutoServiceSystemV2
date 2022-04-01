@@ -1,9 +1,5 @@
 ﻿using AutoServiceSystem.BusinessObject;
 using AutoServiceSystem.DataAccessLayer;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace AutoServiceSystem.Web.Controllers
@@ -63,13 +59,8 @@ namespace AutoServiceSystem.Web.Controllers
 
             if (this.ModelState.IsValid)
             {
-                client.FullName = clientModel.FullName;
-                client.Gender = clientModel.Gender;
                 client.Phone = clientModel.Phone;
                 client.Address = clientModel.Address;
-                client.Email = clientModel.Email;
-                client.NationalCardNumber = clientModel.NationalCardNumber;
-                client.PIN = clientModel.PIN;
 
                 clientRepository.Update(client);
                 return Redirect("/client");

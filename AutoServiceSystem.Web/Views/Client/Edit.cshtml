@@ -15,14 +15,6 @@
 
             @Html.ValidationSummary()
 
-            <label for="fullname">FullName</label>
-            <input type="text" id="fullname" value="@Model.FullName" name="fullname">
-            @Html.ValidationMessageFor(m => m.FullName)
-
-            <label for="gender">Gender</label>
-            <input type="text" id="gender" value="@Model.Gender" name="gender">
-            @Html.ValidationMessageFor(m => m.Gender)
-
             <label for="phone">Phone</label>
             <input type="text" id="phone" value="@Model.Phone" name="phone">
             @Html.ValidationMessageFor(m => m.Phone)
@@ -31,17 +23,6 @@
             <input type="text" id="address" value="@Model.Address" name="address">
             @Html.ValidationMessageFor(m => m.Address)
 
-            <label for="email">Email</label>
-            <input type="text" id="email" value="@Model.Email" name="email">
-            @Html.ValidationMessageFor(m => m.Email)
-
-            <label for="nationalcardnumber">NationalCardNumber</label>
-            <input type="text" id="nationalcardnumber" value="@Model.NationalCardNumber" name="nationalcardnumber">
-            @Html.ValidationMessageFor(m => m.NationalCardNumber)
-
-            <label for="pin">PIN</label>
-            <input type="text" id="pin" value="@Model.PIN" name="pin">
-            @Html.ValidationMessageFor(m => m.PIN)
 
             <button type="submit" class="accept">Edit</button>
             <button onclick="location.href='/client';return false;" class="cancel">Cancel</button>
