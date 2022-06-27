@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoServiceSystem.DataAcces
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoServiceSystem.DatabaseEntity", "AutoServiceSystem.DatabaseEntity\AutoServiceSystem.DatabaseEntity.csproj", "{FDC69D2B-C3D6-40EE-B874-6F88C8E9024F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoServiceSystem.Web", "AutoServiceSystem.Web\AutoServiceSystem.Web.csproj", "{BAE5B78E-77C0-48BA-9A66-3BF469E621EE}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoServiceSystem.DataAccessLayer.Test", "AutoServiceSystem.DataAccessLayer.Test\AutoServiceSystem.DataAccessLayer.Test.csproj", "{4A2BEBFB-D6E2-482E-B7FE-55F5329D19EE}"
 EndProject
 Global
@@ -31,10 +29,6 @@ Global
 		{FDC69D2B-C3D6-40EE-B874-6F88C8E9024F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDC69D2B-C3D6-40EE-B874-6F88C8E9024F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDC69D2B-C3D6-40EE-B874-6F88C8E9024F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BAE5B78E-77C0-48BA-9A66-3BF469E621EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BAE5B78E-77C0-48BA-9A66-3BF469E621EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BAE5B78E-77C0-48BA-9A66-3BF469E621EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BAE5B78E-77C0-48BA-9A66-3BF469E621EE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4A2BEBFB-D6E2-482E-B7FE-55F5329D19EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4A2BEBFB-D6E2-482E-B7FE-55F5329D19EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A2BEBFB-D6E2-482E-B7FE-55F5329D19EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
