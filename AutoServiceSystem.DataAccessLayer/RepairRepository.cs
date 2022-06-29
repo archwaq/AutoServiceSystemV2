@@ -20,7 +20,7 @@ namespace AutoServiceSystem.DataAccessLayer
             Delete(repair.Id);
         }
 
-        public void Delete(int id)
+        public void Delete(int? id)
         {
             using (var db = new DatabaseEntity.AutoServiceSystemEntities())
             {
@@ -30,7 +30,7 @@ namespace AutoServiceSystem.DataAccessLayer
             }
         }
 
-        public BusinessObject.Repair Read(int id)
+        public BusinessObject.Repair Read(int? id)
         {
             using (var db = new DatabaseEntity.AutoServiceSystemEntities())
             {
