@@ -1,0 +1,51 @@
+﻿@model AutoServiceSystem.BusinessObject.Client
+
+@{
+    ViewBag.Title = "Insert Client";
+}
+
+<h1>Insert Client</h1>
+
+<section>
+    <div>
+        @using (Html.BeginForm("Create", "Client", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                
+                @Html.ValidationSummary()
+
+                <label for="fullname">FullName</label>
+                <input type="text" id="fullname" name="fullname" value="@Model.FullName" />
+                @Html.ValidationMessageFor(m => m.FullName)
+
+                <label for="gender">Gender</label>
+                <input type="text" id="gender" name="gender" value="@Model.Gender" />
+                @Html.ValidationMessageFor(m => m.Gender)
+
+                <label for="phone">Phone</label>
+                <input type="text" id="phone" name="phone" value="@Model.Phone" />
+                @Html.ValidationMessageFor(m => m.Phone)
+
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" value="@Model.Address" />
+                @Html.ValidationMessageFor(m => m.Address)
+
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" value="@Model.Email" />
+                @Html.ValidationMessageFor(m => m.Email)
+
+                <label for="nationalcardnumber">NationalCardNumber</label>
+                <input type="text" id="nationalcardnumber" name="nationalcardnumber" value="@Model.NationalCardNumber" />
+                @Html.ValidationMessageFor(m => m.NationalCardNumber)
+
+                <label for="pin">PIN</label>
+                <input type="text" id="pin" name="pin" value="@Model.PIN" />
+                @Html.ValidationMessageFor(m => m.PIN)
+
+                <button type="submit" class="">Create</button>
+                <button onclick="location.href = '/client/index'; return false;" class="cancel">Cancel</button>
+                       
+            }
+    </div>
+</section>
+

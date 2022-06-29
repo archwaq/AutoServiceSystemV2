@@ -1,0 +1,30 @@
+﻿@model AutoServiceSystem.BusinessObject.Client
+
+@{
+    ViewBag.Title = "Edit Client";
+}
+
+<h1>Edit Client</h1>
+
+<selection>
+    <div>
+        @using (Html.BeginForm("Edit", "Client", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+
+                @Html.ValidationSummary()
+
+                <label for="phone">Phone</label>
+                <input type="text" id="phone" value="@Model.Phone" name="phone" />
+                @Html.ValidationMessageFor(m => m.Phone)
+
+                <label for="address">Address</label>
+                <input type="text" id="address" value="@Model.Address" name="address" />
+                @Html.ValidationMessageFor(m => m.Address)
+
+                <button type="submit" class="accept">Edit</button>
+                <button onclick="location.href='/client/index';return false;" class="cancel">Cancel</button>
+            }
+    </div>
+</selection>
+

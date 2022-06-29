@@ -18,7 +18,7 @@ namespace AutoServiceSystem.DataAccessLayer
         {
             Delete(client.Id);
         }
-        public void Delete(int id)
+        public void Delete(int? id)
         {
             using (var db = new DatabaseEntity.AutoServiceSystemEntities())
             {
@@ -27,7 +27,7 @@ namespace AutoServiceSystem.DataAccessLayer
                 db.SaveChanges();
             }
         }
-        public BusinessObject.Client Read(int id)
+        public BusinessObject.Client Read(int? id)
         {
 
             using (var db = new DatabaseEntity.AutoServiceSystemEntities())
