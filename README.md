@@ -44,62 +44,62 @@ The `Repair` entity holds 5 properties:
 This is the user interface should consists of the following pages (under the designated routes):
 
 ### Index Page
-Route: `/` (GET)
+Route: `client/index` (GET)
 
-List all repairs.
+List of all clients.
  
 ### Create Page
-Route: `/create` (GET and POST)
+Route: `client/create` (GET and POST)
 
-`GET` shows a form to create a repair. `POST` saves the form data into the database as new repair.
+`GET` shows a form to create a client. `POST` saves the form data into the database as new record.
  
 ### Delete Page
-Route: `/delete/{id}` (GET and POST)
+Route: `client/delete/{id}` (GET and POST)
 
-`GET` shows a form to delete a certain repair. `POST` confirms deleting a repair and removes the repair from the database.
+`GET` shows a form to delete a certain client. `POST` confirms deleting a client and removes the record from the database.
 
 ### Edit Page
-Route: `/edit/{id}` (GET and POST)
+Route: `client/edit/{id}` (GET and POST)
 
-`GET` shows a form to edit a certain repair. `POST` confirms editing a repair and modifies the repair in the database.
+`GET` shows a form to edit a certain client. `POST` confirms editing a client and modifies the record in the database.
 
-Route: `/vehicle` (GET)
+Route: `vehicle/index` (GET)
 
-List all vehicles.
+List of all vehicles.
  
 ### Create Page
-Route: `/vehicle/create` (GET and POST)
+Route: `vehicle/create` (GET and POST)
 
-`GET` shows a form to create a vehicle. `POST` saves the form data into the database as new vehicle.
+`GET` shows a form to create a vehicle. `POST` saves the form data into the database as new record.
  
 ### Delete Page
-Route: `/vehicle/delete/{id}` (GET and POST)
+Route: `vehicle/delete/{id}` (GET and POST)
 
-`GET` shows a form to delete a certain vehicle. `POST` confirms deleting a vehicle and removes the vehicle from the database.
+`GET` shows a form to delete a certain vehicle. `POST` confirms deleting a vehicle and removes the record from the database.
 
 ### Edit Page
-Route: `/vehicle/edit/{id}` (GET and POST)
+Route: `vehicle/edit/{id}` (GET and POST)
 
-`GET` shows a form to edit a certain vehicle. `POST` confirms editing a vehicle and modifies the vehicle in the database.
+`GET` shows a form to edit a certain vehicle. `POST` confirms editing a vehicle and modifies the record in the database.
 
-Route: `/client` (GET)
+Route: `repair/index` (GET)
 
-List all clients.
+List of all repairs.
  
 ### Create Page
-Route: `/client/create` (GET and POST)
+Route: `repair/create` (GET and POST)
 
-`GET` shows a form to create a client. `POST` saves the form data into the database as new client.
+`GET` shows a form to create a repair. `POST` saves the form data into the database as new record.
  
 ### Delete Page
-Route: `/client/delete/{id}` (GET and POST)
+Route: `repair/delete/{id}` (GET and POST)
 
-`GET` shows a form to delete a certain client. `POST` confirms deleting a client and removes the client from the database.
+`GET` shows a form to delete a certain repair. `POST` confirms deleting a repair and removes the record from the database.
 
 ### Edit Page
-Route: `/client/edit/{id}` (GET and POST)
+Route: `repair/edit/{id}` (GET and POST)
 
-`GET` shows a form to edit a certain client. `POST` confirms editing a client and modifies the client in the database.
+`GET` shows a form to edit a certain repair. `POST` confirms editing a repair and modifies the record in the database.
 
 ## Setup
 Before you start working, make sure you download all the dependencies (packages) required for each technology and set up the databases! Below are instructions on how to do this:

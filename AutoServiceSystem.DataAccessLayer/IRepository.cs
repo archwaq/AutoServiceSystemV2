@@ -7,8 +7,8 @@ namespace AutoServiceSystem.DataAccessLayer
         void Create(T item);
         void Update(T item);
         void Delete(T item);
-        void Delete(int id);
-        T Read(int id);
+        void Delete(int? id);
+        T Read(int? id);
         List<T> ReadAll();
     }
 }
