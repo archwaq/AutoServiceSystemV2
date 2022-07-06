@@ -63,10 +63,6 @@
       <Project>{c9ac9a54-9300-4cee-a050-2a5fdd7b8928}</Project>
       <Name>AutoServiceSystem.BusinessObject</Name>
     </ProjectReference>
-    <ProjectReference Include="..\AutoServiceSystem.DatabaseEntity\AutoServiceSystem.DatabaseEntity.csproj">
-      <Project>{fdc69d2b-c3d6-40ee-b874-6f88c8e9024f}</Project>
-      <Name>AutoServiceSystem.DatabaseEntity</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

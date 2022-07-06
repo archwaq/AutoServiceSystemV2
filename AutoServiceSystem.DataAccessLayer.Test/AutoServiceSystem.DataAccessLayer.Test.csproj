@@ -74,10 +74,6 @@
       <Project>{ca1ff1a5-f662-4b56-ace0-e7445417e699}</Project>
       <Name>AutoServiceSystem.DataAccessLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\AutoServiceSystem.DatabaseEntity\AutoServiceSystem.DatabaseEntity.csproj">
-      <Project>{fdc69d2b-c3d6-40ee-b874-6f88c8e9024f}</Project>
-      <Name>AutoServiceSystem.DatabaseEntity</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
