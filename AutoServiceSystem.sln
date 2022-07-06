@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoServiceSystem.DataAcces
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoServiceSystem.DataAccessLayer.Test", "AutoServiceSystem.DataAccessLayer.Test\AutoServiceSystem.DataAccessLayer.Test.csproj", "{4A2BEBFB-D6E2-482E-B7FE-55F5329D19EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoServiceSystem.DatabaseEntity", "AutoServiceSystem.DatabaseEntity\AutoServiceSystem.DatabaseEntity.csproj", "{2B9E1451-8110-4195-A4B5-38E72C3141B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{4A2BEBFB-D6E2-482E-B7FE-55F5329D19EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A2BEBFB-D6E2-482E-B7FE-55F5329D19EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A2BEBFB-D6E2-482E-B7FE-55F5329D19EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B9E1451-8110-4195-A4B5-38E72C3141B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B9E1451-8110-4195-A4B5-38E72C3141B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B9E1451-8110-4195-A4B5-38E72C3141B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B9E1451-8110-4195-A4B5-38E72C3141B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
