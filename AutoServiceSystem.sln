@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
@@ -9,7 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoServiceSystem.DataAcces
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoServiceSystem.DataAccessLayer.Test", "AutoServiceSystem.DataAccessLayer.Test\AutoServiceSystem.DataAccessLayer.Test.csproj", "{4A2BEBFB-D6E2-482E-B7FE-55F5329D19EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoServiceSystem.WebServer", "AutoServiceSystem.WebServer\AutoServiceSystem.WebServer.csproj", "{6724E526-3813-4635-94DC-25B61028C4BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +28,6 @@ Global
 		{4A2BEBFB-D6E2-482E-B7FE-55F5329D19EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A2BEBFB-D6E2-482E-B7FE-55F5329D19EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A2BEBFB-D6E2-482E-B7FE-55F5329D19EE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6724E526-3813-4635-94DC-25B61028C4BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6724E526-3813-4635-94DC-25B61028C4BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6724E526-3813-4635-94DC-25B61028C4BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6724E526-3813-4635-94DC-25B61028C4BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

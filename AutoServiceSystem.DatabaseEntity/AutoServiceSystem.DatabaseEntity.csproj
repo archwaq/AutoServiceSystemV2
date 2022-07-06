@@ -5,12 +5,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CA1FF1A5-F662-4B56-ACE0-E7445417E699}</ProjectGuid>
+    <ProjectGuid>{2B9E1451-8110-4195-A4B5-38E72C3141B7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AutoServiceSystem.DataAccessLayer</RootNamespace>
-    <AssemblyName>AutoServiceSystem.DataAccessLayer</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <RootNamespace>AutoServiceSystem.DatabaseEntity</RootNamespace>
+    <AssemblyName>AutoServiceSystem.DatabaseEntity</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
@@ -43,6 +43,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,26 +53,57 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientRepository.cs" />
-    <Compile Include="IRepository.cs" />
-    <Compile Include="Mapping.cs" />
+    <Compile Include="AutoServiceSystemModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AutoServiceSystemModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AutoServiceSystemModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AutoServiceSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AutoServiceSystemModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AutoServiceSystemModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Client.cs">
+      <DependentUpon>AutoServiceSystemModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RepairRepository.cs" />
-    <Compile Include="VehicleRepository.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AutoServiceSystem.BusinessObject\AutoServiceSystem.BusinessObject.csproj">
-      <Project>{c9ac9a54-9300-4cee-a050-2a5fdd7b8928}</Project>
-      <Name>AutoServiceSystem.BusinessObject</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AutoServiceSystem.DatabaseEntity\AutoServiceSystem.DatabaseEntity.csproj">
-      <Project>{2b9e1451-8110-4195-a4b5-38e72c3141b7}</Project>
-      <Name>AutoServiceSystem.DatabaseEntity</Name>
-    </ProjectReference>
+    <Compile Include="Repair.cs">
+      <DependentUpon>AutoServiceSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicle.cs">
+      <DependentUpon>AutoServiceSystemModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="AutoServiceSystemModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AutoServiceSystemModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="AutoServiceSystemModel.edmx.diagram">
+      <DependentUpon>AutoServiceSystemModel.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AutoServiceSystemModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AutoServiceSystemModel.edmx</DependentUpon>
+      <LastGenOutput>AutoServiceSystemModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="AutoServiceSystemModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AutoServiceSystemModel.edmx</DependentUpon>
+      <LastGenOutput>AutoServiceSystemModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
